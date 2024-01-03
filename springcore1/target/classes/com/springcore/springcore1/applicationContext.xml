@@ -1,0 +1,17 @@
+<!-- applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Car bean -->
+    <bean id="car" class="Car">
+        <constructor-arg value="Toyota"/>
+    </bean>
+
+    <!-- Define the Driver bean with dependency injection -->
+    <bean id="driver" class="Driver">
+        <constructor-arg ref="car"/>
+    </bean>
+
+</beans>
